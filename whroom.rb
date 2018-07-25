@@ -27,4 +27,5 @@ class Whroom < Formula
     </dict>
     </plist>
   EOS
+  end
 end
