@@ -1,8 +1,15 @@
+HOMEBREW_WHROOM_VERSION="0.1.1"
 class Whroom < Formula
   desc "Whroom: Which room are you at?"
   homepage "https://github.com/aizu-go-kapro/whroom"
-  url "https://github.com/aizu-go-kapro/releases/download/0.1.0/whroom_darwin_amd64.tar.gz"
-  version "0.1.0"
+
+  if OS.mac?
+    url "https://github.com/aizu-go-kapro/whroom/releases/download/#{HOMEBREW_WHROOM_VERSION}/whroom_darwin_amd64.tar.gz"
+  elsif OS.linux?
+    url "https://github.com/aizu-go-kapro/whroom/releases/download/#{HOMEBREW_WHROOM_VERSION}/whroom_darwin_amd64.tar.gz"
+  end
+
+  version HOMEBREW_WHROOM_VERSION
 
   def install
     bin.install "whroom"
